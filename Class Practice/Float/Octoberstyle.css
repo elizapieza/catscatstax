@@ -1,0 +1,56 @@
+/*image style
+----------------------------------------------- */
+img{
+    width:150px;
+    height: auto;
+    margin: 10px;
+}
+
+/*paragraph style
+----------------------------------------------- */
+p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/*box style
+----------------------------------------------- */
+.box {
+    width: 100px;
+    height: 10px;
+    font-size: 40px;
+    text-align: center;
+    background-color: #0beca5;
+    border: 1px solid black;
+    margin: 10px;
+}
+
+/*float images left
+----------------------------------------------- */
+img {
+    float: left;
+}
+
+/* float boxes left
+----------------------------------------------- */
+.box {
+    float: left;
+}
+
+/* clear float
+----------------------------------------------- */
+p{
+    clear: both;
+}
+
+/* float images right
+----------------------------------------------- */
+img {
+    float: right;
+}
+
+/* float boxes right
+----------------------------------------------- */
+.box {
+    float: right;
+}

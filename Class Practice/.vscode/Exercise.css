@@ -1,0 +1,21 @@
+/* Externall sheet for class exercise 9/26 */
+
+body {
+    background-color: aquamarine;
+}
+
+h1 {
+    font-family: 'playwrite Id', arial, sans-serif;
+    font-style: italic;
+    font-weight: bold;
+    text-decoration: underline wavy black;
+    font-size: 45px;
+}
+
+p {
+    font-family: 'Arizonia', cursive, sans-serif;
+    font-style: bold;
+    font-weight: lighter;
+    text-decoration: underline dashed black;
+    font-size: 30px;
+}
