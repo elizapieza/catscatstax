@@ -6,20 +6,34 @@ body {
 /* Navigation bar */
 .navbar {
     background-color: rgba(3, 85, 3, 0.408);
+    position: sticky;
+    top: 0;
+    overflow: hidden;
     display: flex;
     text-align: center;
     font-size: 15px;
     padding: 6px; /*padding-around text */
-<<<<<<< HEAD
-    width: 100%;
-=======
->>>>>>> 8308b78c6353c98d92ca00efcc5f2ae968e69640
+width: 100%;
 }
 nav ul li {
     display: inline;
+    position: relative;
 }
 nav.actions a:hover {
     color: white;
+}
+
+/*scroll button
+#scroll {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+    background-color: #036203;
+    color: white;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
 }
 
 /* Heading */
@@ -122,8 +136,4 @@ dl {
     text-align: center;
     font-family: "Edu AU VIC WA NT Hand", arial;
     font-size: 15px;
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 8308b78c6353c98d92ca00efcc5f2ae968e69640
