@@ -6,10 +6,11 @@ body {
 /* Navigation bar */
 .navbar {
     background-color: rgba(3, 85, 3, 0.408);
-    display: inline-block;
+    display: flex;
     text-align: center;
     font-size: 15px;
     padding: 6px; /*padding-around text */
+    width: 100%;
 }
 nav ul li {
     display: inline;
