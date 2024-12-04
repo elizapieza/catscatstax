@@ -23,7 +23,7 @@ nav.actions a:hover {
     color: white;
 }
 
-/*scroll button
+/*scroll button */
 #scroll {
     position: fixed;
     bottom: 20px;
@@ -104,6 +104,8 @@ form input[type="submit"]:hover {
     color: white;
     padding: 5px;
     margin: 5px;
+    width: 100px;
+    height: 100px;
 }
 /* General layout */
 h3 {
