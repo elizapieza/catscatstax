@@ -23,10 +23,12 @@
     <div class="actions">
         <a href="https://calendly.com/pageantgurlmariah/2024_taxes">
             <img src="calander.jpg" alt="Schedule Appointment" width="100" height="100">
-        </a> <br>
+        </a>
+    
         <a href="services.html">
             <img src="taxes.jpg" alt="Services Offered" width="100" height="100">
-        </a> <br>
+        </a> 
+        <br>
     </div>
 
     <br>
@@ -54,12 +56,13 @@
     </div>
 
     <script>
+        // Function to post a review
         function postReview(event) {
             event.preventDefault(); // Prevent form submission and page reload
-
+    
             const name = document.getElementById('name').value;
             const review = document.getElementById('review').value;
-
+    
             // Get the selected rating
             const ratings = document.getElementsByName('rating');
             let selectedRating = null;
@@ -69,31 +72,67 @@
                     break;
                 }
             }
-
+    
             // Validate inputs
             if (!name || !selectedRating || !review) {
                 alert('Please fill out all fields!');
                 return;
             }
-
+    
+            // Create a new review
+            const newReview = {
+                name: name,
+                rating: selectedRating,
+                review: review
+            };
+    
+            // Retrieve existing reviews from localStorage
+            let reviews = JSON.parse(localStorage.getItem('reviews')) || [];
+    
+            // Add the new review
+            reviews.push(newReview);
+    
+            // Save the updated reviews
+            localStorage.setItem('reviews', JSON.stringify(reviews));
+    
             // Create a new review element
             const reviewDiv = document.createElement('div');
             reviewDiv.className = 'review';
             reviewDiv.innerHTML = `
-                <p style="bold";>${name} </p>
+                <p><strong>${name}</strong></p>
                 <p>Rating: ${selectedRating}</p>
                 <p>${review}</p>
             `;
-
-            // Append the review to the reviews section
+    
+            // Append the review
             document.getElementById('reviews').appendChild(reviewDiv);
 
-            // Clear the form inputs
             document.querySelector('form').reset();
-
-            // Show a thank-you message
+            
+            // Thanks
             alert('Thank you for your review!');
         }
+
+        function loadReviews() {
+
+            const reviews = JSON.parse(localStorage.getItem('reviews')) || [];
+    
+
+            reviews.forEach(review => {
+                const reviewDiv = document.createElement('div');
+                reviewDiv.className = 'review';
+                reviewDiv.innerHTML = `
+                    <p><strong>${review.name}</strong></p>
+                    <p>Rating: ${review.rating}</p>
+                    <p>${review.review}</p>
+                `;
+                document.getElementById('reviews').appendChild(reviewDiv);
+            });
+        }
+    
+        // Load the reviews when the page loads
+        window.onload = loadReviews;
     </script>
+    
 </body>
 </html>

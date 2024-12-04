@@ -12,8 +12,6 @@ include 'contacts/dbh.inc.php';
 </head>
 
 <body>
-<script src="headerFooter.js"></script>
-
 
     <!-- SET UP PHP-->
      <main class = "form">

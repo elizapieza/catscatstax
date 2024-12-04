@@ -1,5 +1,5 @@
-// Insert the header
 document.addEventListener("DOMContentLoaded", () => {
+    // Insert the header
     const headerHTML = `
     <header>
         <nav class="navbar">
@@ -15,25 +15,36 @@ document.addEventListener("DOMContentLoaded", () => {
         <div class="header">
             <h1>Cats Cats Tax</h1>
             <h2>Relax with some cats while I handle your taxes</h2>
+            <img src="cat.jpg" alt="Cat icon" width= 100 height= 100px>
         </div>
     </header>`;
-    
     document.body.insertAdjacentHTML("afterbegin", headerHTML);
 
-    // insert scroll to top button
+    // Insert scroll to top button
     const scrollButtonHTML = `
-    <button id="scroll" onclick="scrollToTop()">⬆️</button>`;
-const scrollButton = document.createElement("scroll");
-window.onscroll = function() {
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        scrollButton.style.display = "block";
-    } else {
-        scrollButton.style.display = "none";
+    <button id="scroll">⬆️</button>`;
+    document.body.insertAdjacentHTML('beforeend', scrollButtonHTML);
+
+    const scrollButton = document.getElementById('scroll');
+    scrollButton.style.display = 'none'; // Start with the button hidden
+
+
+    window.onscroll = function() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            scrollButton.style.display = 'block'; // Show button when scrolled down
+        } else {
+            scrollButton.style.display = 'none'; // Hide button at the top
+        }
+    };
+
+    function scrollToTop() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
     }
-};
-function scrollToTop() {
-    window.scrollTo({ top: 0, behaviour: 'smooth' });
-}
+
+    scrollButton.addEventListener('click', scrollToTop);
 
     // Insert the footer
     const footerHTML = `
@@ -46,6 +57,5 @@ function scrollToTop() {
             <a href="mailto:pageantgurlmariah@gmail.com?subject=Tax%Service%2024">Contact</a>
         </p>
     </footer>`;
-    
     document.body.insertAdjacentHTML("beforeend", footerHTML);
 });
