@@ -1,0 +1,22 @@
+/* Must link to html- <link rel="stylesheet" href="external.css"> */
+    body {
+        background-color: violet;
+    }
+    h1 {
+        color: black;
+    }
+    p {
+        background-color: grey;
+        color: white;
+    }
+    #p1 {
+        color: green;
+    }
+    .odd {
+        background-color: yellow;
+        font: arial;
+    }
+    .even {
+        background-color: orange;
+        font: serif;
+    }
