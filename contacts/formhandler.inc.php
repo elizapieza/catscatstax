@@ -1,6 +1,6 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] !== "POST") {
-    header("Location: ../home.html");
+    header("Location: ../index.html");
     exit();
 }
 
@@ -22,7 +22,7 @@ try {
 
     $stmt->execute();
     echo "Form submitted successfully!";
-    header("Location: ../home.html");
+    header("Location: ../index.html");
 } catch (PDOException $e) {
     echo "Error: " . $e->getMessage();
 }

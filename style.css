@@ -8,12 +8,9 @@ body {
     background-color: rgba(3, 85, 3, 0.408);
     position: sticky;
     top: 0;
-    overflow: hidden;
-    display: flex;
-    text-align: center;
-    font-size: 15px;
+    z-index: 1000;
     padding: 6px; /*padding-around text */
-width: 100%;
+    width: 100%;
 }
 nav ul li {
     display: inline;
@@ -104,8 +101,6 @@ form input[type="submit"]:hover {
     color: white;
     padding: 5px;
     margin: 5px;
-    width: 100px;
-    height: 100px;
 }
 /* General layout */
 h3 {

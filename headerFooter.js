@@ -22,22 +22,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // insert scroll to top button
     const scrollButtonHTML = `
-    <button onclick="topFunction()" id="scroll" title="Go to top">Top</button>`;
+    <button id="scroll" onclick="scrollToTop()">⬆️</button>`;
+const scrollButton = document.createElement("scroll");
+window.onscroll = function() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        scrollButton.style.display = "block";
+    } else {
+        scrollButton.style.display = "none";
+    }
+};
+function scrollToTop() {
+    window.scrollTo({ top: 0, behaviour: 'smooth' });
+}
 
-    let scrollButton = document.getElementById("scroll");
-    window.onscroll = function() {scrollFunction()};
-    function scrollFunction() {
-        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-            scrollButton.style.display = "block";
-        } else {
-            scrollButton.style.display = "none";
-        }
-    }
-    function topFunction() {
-        document.body.scrollTop = 0;
-        document.documentElement.scrollTop = 0;
-    }
-    
     // Insert the footer
     const footerHTML = `
     <footer class="footer">
