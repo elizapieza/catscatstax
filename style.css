@@ -10,7 +10,10 @@ body {
     text-align: center;
     font-size: 15px;
     padding: 6px; /*padding-around text */
+<<<<<<< HEAD
     width: 100%;
+=======
+>>>>>>> 8308b78c6353c98d92ca00efcc5f2ae968e69640
 }
 nav ul li {
     display: inline;
@@ -119,4 +122,8 @@ dl {
     text-align: center;
     font-family: "Edu AU VIC WA NT Hand", arial;
     font-size: 15px;
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 8308b78c6353c98d92ca00efcc5f2ae968e69640
