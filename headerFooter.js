@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="cats.html">Cats in the Office</a></li>
-                <li><a href="contact.php">Contact Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
                 <li><a href="services.html">Services</a></li>
                 <li><a href="updates.html">Important Tax Updates</a></li>
             </ul>
