@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cats Cats Tax</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Dots:wght@400..700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+<!-- add header from js-->
+<script src="headerFooter.js"></script>
+
+    <div class="mission">
+        <h4>
+            Welcome to Cats Cats Tax, where you can relax with some cats while I handle your taxes.
+            Offering a fully remote experience with a goal and passion in mind to create a stress-free tax season for all clients!
+            We are dedicated to providing reliable services with offering the max-returns at the cheapest rate around!
+            Schedule your appointment today, let me handle your stress, just relax, sit back, and BE OUR GUEST!
+        </h4>
+    </div>
+
+    <div class="actions">
+        <a href="https://calendly.com/pageantgurlmariah/2024_taxes">
+            <img src="calander.jpg" alt="Schedule Appointment" width="100" height="100">
+        </a>
+    
+        <a href="services.html">
+            <img src="taxes.jpg" alt="Services Offered" width="100" height="100">
+        </a> 
+        <br>
+    </div>
+
+    <br>
+    <h3>Leave Us A Review!</h3>
+    <form onsubmit="postReview(event);" autocomplete="on">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="Enter Name" required><br>
+
+        <label for="rating">Rating:</label><br>
+        <input type="radio" id="rating1" name="rating" value="1">1 <br>
+        <input type="radio" id="rating2" name="rating" value="2">2 <br>
+        <input type="radio" id="rating3" name="rating" value="3">3 <br>
+        <input type="radio" id="rating4" name="rating" value="4">4 <br>
+        <input type="radio" id="rating5" name="rating" value="5">5 <br>
+
+        <label for="review">Review:</label>
+        <textarea id="review" name="review" placeholder="Please add any additional information!" required></textarea><br>
+
+        <button type="submit">Submit</button>
+        <input type="reset" value="Reset">
+    </form>
+
+    <div class="reviews" id="reviews">
+        <h3>Reviews</h3>
+    </div>
+
+    <script>
+        // Function to post a review
+        function postReview(event) {
+            event.preventDefault(); // Prevent form submission and page reload
+    
+            const name = document.getElementById('name').value;
+            const review = document.getElementById('review').value;
+    
+            // Get the selected rating
+            const ratings = document.getElementsByName('rating');
+            let selectedRating = null;
+            for (const rating of ratings) {
+                if (rating.checked) {
+                    selectedRating = rating.value;
+                    break;
+                }
+            }
+    
+            // Validate inputs
+            if (!name || !selectedRating || !review) {
+                alert('Please fill out all fields!');
+                return;
+            }
+    
+            // Create a new review
+            const newReview = {
+                name: name,
+                rating: selectedRating,
+                review: review
+            };
+    
+            // Retrieve existing reviews from localStorage
+            let reviews = JSON.parse(localStorage.getItem('reviews')) || [];
+    
+            // Add the new review
+            reviews.push(newReview);
+    
+            // Save the updated reviews
+            localStorage.setItem('reviews', JSON.stringify(reviews));
+    
+            // Create a new review element
+            const reviewDiv = document.createElement('div');
+            reviewDiv.className = 'review';
+            reviewDiv.innerHTML = `
+                <p><strong>${name}</strong></p>
+                <p>Rating: ${selectedRating}</p>
+                <p>${review}</p>
+            `;
+    
+            // Append the review
+            document.getElementById('reviews').appendChild(reviewDiv);
+
+            document.querySelector('form').reset();
+            
+            // Thanks
+            alert('Thank you for your review!');
+        }
+
+        function loadReviews() {
+
+            const reviews = JSON.parse(localStorage.getItem('reviews')) || [];
+    
+
+            reviews.forEach(review => {
+                const reviewDiv = document.createElement('div');
+                reviewDiv.className = 'review';
+                reviewDiv.innerHTML = `
+                    <p><strong>${review.name}</strong></p>
+                    <p>Rating: ${review.rating}</p>
+                    <p>${review.review}</p>
+                `;
+                document.getElementById('reviews').appendChild(reviewDiv);
+            });
+        }
+    
+        // Load the reviews when the page loads
+        window.onload = loadReviews;
+    </script>
+    
+</body>
+</html>
