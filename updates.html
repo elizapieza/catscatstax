@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Cats Cats Tax| Updates</title>
+        <link rel="stylesheet" href="style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Dots:wght@400..700&display=swap" rel="stylesheet">
+    </head>
+    
+
+    <body>
+        <script src="headerFooter.js"></script>
+
+        <div id= "calculator">
+            <h3> Estimate your taxes with our tax calculator </h3>
+            <form>
+                <label for="Yearly income">Yearly Income: </label>
+                <input type="number" id="income" required>
+        
+                <label for="Filing Status">Filing Status: </label>
+                <select id="status">
+                    <option value="Single">Single</option>
+                    <option value="Married Filing Jointly">Married Filing Jointly</option>
+                    <option value="Married Filing Separately">Married Filing Separately</option>
+                    <option value="Head of Household">Head of Household</option>
+                </select>
+        
+                <button type="button" onclick="calculateTax()">Calculate</button>
+            </form>
+            <p id="result"></p>
+        </div>
+        <script src="Calculator.js"></script>
+        <main class = "post 1">
+            <h5> 2025 Tax Rates </h5>
+            <p> The IRS has released the new tax rates for 2025! </p>
+            <h5>Increased Standard deduction: </h5>
+                <ul>
+                    <li>Single: $15,000</li>
+                    <li>Married Filing Jointly: $30,000</li>
+                    <li>Head of Household: $22,500</li>
+                </ul>
+            <h6> What does this mean?</h6>
+            <p> The standard deduction is the amount that taxpayers can subtract from their income before calculating their tax liability. The increased standard deduction means that more taxpayers will be able to reduce their taxable income, potentially resulting in a higher refunds! </p>
+
+            </main>
+    </body>
+</html>
